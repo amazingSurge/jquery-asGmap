@@ -1,10 +1,6 @@
-/*
- * jquery-asGmap
- * https://github.com/amazingSurge/jquery-asGmap
- *
- * Copyright (c) 2014 amazingSurge
- * Licensed under the MIT license.
- */
+/*! jQuery asGmap - v0.1.0 - 2014-09-16
+* https://github.com/amazingSurge/jquery-asGmap
+* Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($, document, window, undefined) {
     "use strict";
 
