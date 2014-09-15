@@ -1,0 +1,37 @@
+{
+  "name": "jquery-asGmap",
+  "title": "jQuery asGmap",
+  "description": "a jquery plugin",
+  "version": "0.1.0",
+  "homepage": "https://github.com/amazingSurge/jquery-asGmap",
+  "author": {
+    "name": "amazingSurge",
+    "email": "amazingSurge@yahoo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amazingSurge/jquery-asGmap.git"
+  },
+  "bugs": "https://github.com/amazingSurge/jquery-asGmap/issues",
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "https://github.com/amazingSurge/jquery-asGmap/blob/master/LICENSE-GPL"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-csscomb": "*",
+    "grunt-jsbeautifier": "*",
+    "grunt-text-replace": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-less": "*",
+    "grunt-autoprefixer": "*",
+    "load-grunt-tasks": "*"
+  }
+}
