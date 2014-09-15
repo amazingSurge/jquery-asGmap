@@ -6,6 +6,7 @@
 
     var pluginName = 'asGmap';
     var instances = [];
+    var loaded = false;
 
     var Plugin = $[pluginName] = function(element, options) {
         this.element = element;
@@ -39,6 +40,9 @@
     Plugin.prototype = {
         constructor: Plugin,
         loadScript: function() {
+            if (loaded) {
+                return;
+            }
             var script = document.createElement("script");
             script.type = "text/javascript";
             script.src = document.location.protocol + "//maps.googleapis.com/maps/api/js?" + (this.options.apikey ? "key=" + this.options.api_key + "&" : "") + "sensor=false&callback=asGmapOnScriptLoaded";
