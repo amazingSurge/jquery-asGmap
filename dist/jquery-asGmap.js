@@ -1,4 +1,4 @@
-/*! jQuery asGmap - v0.2.0 - 2014-09-15
+/*! jQuery asGmap - v0.2.0 - 2014-09-18
 * https://github.com/amazingSurge/jquery-asGmap
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($, document, window, undefined) {
@@ -43,6 +43,7 @@
             if (loaded) {
                 return;
             }
+            loaded = true;
             var script = document.createElement("script");
             script.type = "text/javascript";
             script.src = document.location.protocol + "//maps.googleapis.com/maps/api/js?" + (this.options.apikey ? "key=" + this.options.api_key + "&" : "") + "sensor=false&callback=asGmapOnScriptLoaded";
