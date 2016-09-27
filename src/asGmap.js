@@ -1,67 +1,7 @@
-/**
-* jQuery asGmap v0.3.1
-* https://github.com/amazingSurge/jquery-asGmap
-*
-* Copyright (c) amazingSurge
-* Released under the LGPL-3.0 license
-*/
 import $ from 'jquery';
+import DEFAULTS from './defaults';
 
-var DEFAULTS = {
-  namespace: 'gmap',
-
-  apikey: '',
-  mapType: 'ROADMAP', // ROADMAP, SATELLITE, HYBRID, TERRAIN
-
-  // map options
-  backgroundcolor: '#e5e3df', // Color used for the background of the Map div.
-  defaultui: true, // Enables/disables all default UI.
-  doubleclickzoom: false, // Enables/disables zoom and center on double click.
-  maptypecontrol: true, // The initial enabled/disabled state of the Map type control.
-  maxzoom: null, // The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.
-  minzoom: null, // The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.
-  pancontrol: false, // The enabled/disabled state of the Pan control.
-  rotatecontrol: false, // The enabled/disabled state of the Rotate control.
-  scalecontrol: false, // The initial enabled/disabled state of the Scale control.
-  scrollwheel: false, // If false, disables scrollwheel zooming on the map.
-  streetviewcontrol: false, // The initial enabled/disabled state of the Street View Pegman control.
-  styles: false, // Styles to apply to each of the default map types.
-  zoom: 3, // The initial Map zoom level
-  zoomcontrol: true, // The enabled/disabled state of the Zoom control.
-
-  controlspositions: {
-    mapType: null,
-    pan: null,
-    rotate: null,
-    scale: null,
-    streetView: null,
-    zoom: null
-  },
-
-  // position
-  latitude: null,
-  longitude: null,
-  address: '',
-
-  // markers
-  markers: [],
-  icon: {
-    url: "http://www.google.com/mapfiles/marker.png",
-    size: [20, 34],
-    anchor: [9, 34]
-  },
-
-  // marker
-  markercenter: true,
-  content: '',
-  popup: true,
-
-  // callback
-  onInit: null,
-  onReady: null
-};
-
-const NAMESPACE$1 = 'asGmap';
+const NAMESPACE = 'asGmap';
 let instances = [];
 let googleMapsApiLoaded = false;
 
@@ -253,7 +193,7 @@ class AsGmap {
     let data = [this].concat(...params);
 
     // event
-    this.$element.trigger(`${NAMESPACE$1}::${eventType}`, data);
+    this.$element.trigger(`${NAMESPACE}::${eventType}`, data);
 
     // callback
     eventType = eventType.replace(/\b\w+\b/g, (word) => {
@@ -267,7 +207,7 @@ class AsGmap {
   }
 
   destory() {
-    this.$element.data(NAMESPACE$1, null);
+    this.$element.data(NAMESPACE, null);
     this._trigger('destory');
   }
 
@@ -282,47 +222,4 @@ window.asGmapOnScriptLoaded = () => {
   }
 };
 
-var info = {
-  version:'0.3.1'
-};
-
-const NAMESPACE = 'asGmap';
-const OtherAsGmap = $.fn.asGmap;
-
-const jQueryAsGmap = function(options, ...args) {
-  if (typeof options === 'string') {
-    const method = options;
-
-    if (/^_/.test(method)) {
-      return false;
-    } else if ((/^(get)/.test(method))) {
-      const instance = this.first().data(NAMESPACE);
-      if (instance && typeof instance[method] === 'function') {
-        return instance[method](...args);
-      }
-    } else {
-      return this.each(function() {
-        const instance = $.data(this, NAMESPACE);
-        if (instance && typeof instance[method] === 'function') {
-          instance[method](...args);
-        }
-      });
-    }
-  }
-
-  return this.each(function() {
-    if (!$(this).data(NAMESPACE)) {
-      $(this).data(NAMESPACE, new AsGmap(this, options));
-    }
-  });
-};
-
-$.fn.asGmap = jQueryAsGmap;
-
-$.asGmap = $.extend({
-  setDefaults: AsGmap.setDefaults,
-  noConflict: function() {
-    $.fn.asGmap = OtherAsGmap;
-    return jQueryAsGmap;
-  }
-}, info);
+export default AsGmap;

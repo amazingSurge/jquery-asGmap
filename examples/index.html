@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gMap</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="../dist/css/asGmap.css">
+  <style>
+    .gmap {
+      width: 500px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="gmap" data-address="china" data-content="hello world"></div>
+  <div class="gmap" data-address="fuzhou" data-markercenter="false"></div>
+
+  <script src="js/jquery.js"></script>
+  <script src="../dist/jquery-asGmap.js"></script>
+  <script>
+    jQuery(function($) {
+      $('.gmap').asGmap({
+      	apikey: 'AIzaSyDSx-q31rWQKqLwUahg6TrZ3R_5NT0LhFE'
+      });
+    });
+  </script>
+</body>
+</html>

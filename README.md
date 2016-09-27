@@ -179,7 +179,7 @@ $().asGmap('addMarkers', arr);
 ```
 
 #### destroy()
-Destroy the scrollbar instance.
+Destroy the gmap instance.
 ```javascript
 $().asGmap('destroy');
 ```
