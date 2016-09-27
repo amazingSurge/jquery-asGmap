@@ -1,7 +1,0 @@
-.gmap {
-  position: relative;
-  overflow: hidden;
-}
-.gmap * {
-  max-width: none;
-}
