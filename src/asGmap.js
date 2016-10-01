@@ -10,7 +10,7 @@ class AsGmap {
     this.element = element;
     this.$element = $(element);
 
-    this.options = $.extend({}, DEFAULTS, options, this.$element.data());
+    this.options = $.extend(true, {}, DEFAULTS, options, this.$element.data());
 
     this.namespace = this.options.namespace;
 
