@@ -1,5 +1,5 @@
 /**
-* jQuery asGmap v0.3.1
+* jQuery asGmap v0.3.2
 * https://github.com/amazingSurge/jquery-asGmap
 *
 * Copyright (c) amazingSurge
@@ -70,7 +70,7 @@ class AsGmap {
     this.element = element;
     this.$element = $(element);
 
-    this.options = $.extend({}, DEFAULTS, options, this.$element.data());
+    this.options = $.extend(true, {}, DEFAULTS, options, this.$element.data());
 
     this.namespace = this.options.namespace;
 
@@ -283,7 +283,7 @@ window.asGmapOnScriptLoaded = () => {
 };
 
 var info = {
-  version:'0.3.1'
+  version:'0.3.2'
 };
 
 const NAMESPACE = 'asGmap';
