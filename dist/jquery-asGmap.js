@@ -1,5 +1,5 @@
 /**
-* jQuery asGmap v0.3.2
+* jQuery asGmap v0.3.3
 * https://github.com/amazingSurge/jquery-asGmap
 *
 * Copyright (c) amazingSurge
@@ -380,7 +380,7 @@
       }], [{
         key: 'setDefaults',
         value: function setDefaults(options) {
-          _jquery2.default.extend(DEFAULTS, _jquery2.default.isPlainObject(options) && options);
+          _jquery2.default.extend(true, DEFAULTS, _jquery2.default.isPlainObject(options) && options);
         }
       }]);
 
@@ -419,7 +419,7 @@
     ;
 
     var info = {
-      version: '0.3.2'
+      version: '0.3.3'
     };
 
     var NAMESPACE = 'asGmap';
