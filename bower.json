@@ -1,6 +1,6 @@
 {
   "name": "jquery-asGmap",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A jquery plugin that help you add google map to page.",
   "main": "dist/jquery-asGmap.js",
   "copyright": "amazingSurge",

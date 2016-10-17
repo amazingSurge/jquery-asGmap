@@ -46,6 +46,11 @@ bower install jquery-asGmap --save
 npm install jquery-asGmap --save
 ```
 
+#### Install From Yarn
+```sh
+yarn add jquery-asGmap
+```
+
 #### Build From Source
 If you want build from source:
 
@@ -153,11 +158,11 @@ You can also save the instances to variable for further use.
 
 ```javascript
 // call directly
-$().asGmap('destory');
+$().asGmap('destroy');
 
 // or
 var instance = $().data('asGmap');
-instance.destory();
+instance.destroy();
 ```
 
 #### getMap()

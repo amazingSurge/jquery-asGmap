@@ -1,5 +1,5 @@
 /**
-* jQuery asGmap v0.3.3
+* jQuery asGmap v0.3.4
 * https://github.com/amazingSurge/jquery-asGmap
 *
 * Copyright (c) amazingSurge
@@ -250,7 +250,7 @@ class AsGmap {
   }
 
    _trigger(eventType, ...params) {
-    let data = [this].concat(...params);
+    let data = [this].concat(params);
 
     // event
     this.$element.trigger(`${NAMESPACE$1}::${eventType}`, data);
@@ -262,13 +262,13 @@ class AsGmap {
     let onFunction = `on${eventType}`;
 
     if (typeof this.options[onFunction] === 'function') {
-      this.options[onFunction].apply(this, ...params);
+      this.options[onFunction].apply(this, params);
     }
   }
 
-  destory() {
+  destroy() {
     this.$element.data(NAMESPACE$1, null);
-    this._trigger('destory');
+    this._trigger('destroy');
   }
 
   static setDefaults(options) {
@@ -283,7 +283,7 @@ window.asGmapOnScriptLoaded = () => {
 };
 
 var info = {
-  version:'0.3.3'
+  version:'0.3.4'
 };
 
 const NAMESPACE = 'asGmap';
